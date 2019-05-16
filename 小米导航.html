@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米导航</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            color: #333;
+            background-color: #fff;
+            min-width: 1226px;
+
+        }
+
+        .bar {
+            position: relative;
+            z-index: 30;
+            height: 40px;
+            font-size: 12px;
+            color: #b0b0b0;
+            background: #333;
+
+        }
+
+        .bar2 {
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+
+        .bar3 {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .bar3 a {
+            color: #b0b0b0;
+            line-height: 40px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .bar3 span {
+            margin: 0 .5em;
+            color: #424242;
+            font-family: sans-serif;
+            line-height: 40px;
+        }
+
+        .bar3 a:hover {
+            color: white;
+        }
+
+        .shoping {
+            width: 120px;
+            margin-left: 15px;
+            position: relative;
+            float: right;
+            _display: inline;
+            height: 40px;
+        }
+
+        .shopingcard {
+            position: relative;
+            z-index: 32;
+            height: 40px;
+            display: block;
+            line-height: 40px;
+            text-align: center;
+            color: #b0b0b0;
+            background: #424242;
+            text-decoration: none;
+
+        }
+
+        .shopingcard a {
+            color: #b0b0b0;
+            line-height: 40px;
+            display: inline-block;
+            text-decoration: none;
+
+        }
+
+        .shopingfont {
+            margin-right: 4px;
+            line-height: 20px;
+            vertical-align: -4px;
+            font-family: "iconfont" !important;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+        }
+
+        .login {
+            line-height: 40px;
+            position: relative;
+            float: right;
+            height: 40px;
+
+        }
+
+        .login a {
+            padding: 0 5px;
+            text-align: center;
+            float: left;
+            color: #b0b0b0;
+            line-height: 40px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .login a:hover {
+            color: white;
+        }
+
+        .login span {
+            margin: 0;
+            float: left;
+            color: #424242;
+            font-family: sans-serif;
+            line-height: 40px;
+        }
+
+        /****************************title*************************************************/
+        .header {
+            position: relative;
+            z-index: 20;
+            height: 100px;
+        }
+
+        .inner {
+            position: relative;
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .nav {
+            position: relative;
+            z-index: 10;
+            float: left;
+            width: 820px;
+            height: 88px;
+            margin: 0 140px;
+            padding: 12px 0 0 30px;
+            list-style-type: none;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .logo {
+            margin: 25px 0;
+            float: left;
+        }
+
+        .nav li {
+            list-style: none;
+
+        }
+
+        .nav li a {
+            text-decoration: none;
+            float: left;
+            text-align: center;
+            margin: 30px 10px;
+            color: #333;
+
+        }
+
+        .nav li a:hover {
+            color: orangered;
+        }
+
+        #box {
+            float: right;
+            width: 296px;
+            margin-top: 25px;
+        }
+
+        .headsearch {
+            position: absolute;
+            width: 296px;
+            height: 50px;
+        }
+
+        .headsearch input {
+            position: absolute;
+            top: 0;
+            right: 51px;
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+            line-height: 48px;
+            outline: 0;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+            box-sizing: content-box;
+            vertical-align: baseline;
+            margin-top: -100px;
+        }
+
+        .headsearch input:hover {
+            border: 1px solid grey;
+        }
+
+        #search {
+            width: 50px;
+            height: 48px;
+            font-size: 12px;
+
+            float: right;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            line-height: 32px;
+            cursor: pointer;
+            margin-top: -100px;
+            margin-right: 1px;
+        }
+
+        #search:hover {
+            background-color: orangered;
+            color: white;
+            border: 1px solid orangered;
+
+        }
+
+        #search i {
+            margin: 10px auto;
+        }
+
+        /***********************菜单栏******************/
+        .menu {
+            position: relative;
+            z-index: 10;
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .menuselect {
+            position: absolute;
+            top: 25px;
+            z-index: 21;
+            width: 234px;
+            height: 460px;
+            font-size: 14px;
+            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 20px 0;
+            height: 420px;
+            border: 0;
+            color: #fff;
+
+        }
+
+        .menu li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+            list-style-type: none;
+            color: white;
+        }
+
+        .menu li a {
+            color: #fff;
+            position: relative;
+            display: block;
+            padding-left: 30px;
+            height: 42px;
+            line-height: 42px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .menu li:hover {
+            background-color: #ff6700;
+            color: #fff;
+        }
+
+        .menu li i {
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .menuimg {
+            width: 1226px;
+            height: 460px;
+            display: block;
+            max-width: 100%;
+        }
+
+        .sub {
+            margin-top: 14px;
+            margin-left: -14px;
+        }
+
+        .subcart {
+            width: 234px;
+            height: 170px;
+            float: left;
+            margin-left: 76px;
+            min-height: 1px;
+            background-color: grey;
+        }
+
+        .subcart ul {
+            margin: 0;
+            padding: 3px;
+            list-style-type: none;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .subcart li {
+            position: relative;
+            float: left;
+            width: 70px;
+            height: 82px;
+            padding: 0 3px;
+            display: list-item;
+            text-align: -webkit-match-parent;
+            list-style-type: none;
+            font-size: 12px;
+        }
+
+        .subcart li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            border: 1px transparent;
+        }
+
+        .subcart li a:hover {
+            color: white;
+        }
+
+        .span1 {
+            width: 978px;
+            float: left;
+            margin-left: 14px;
+            min-height: 1px;
+        }
+
+        .homep {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .homep li {
+            margin-left: 10px;
+            float: left;
+            transition: box-shadow .2s linear;
+        }
+
+        .honep1 {
+            margin-left: 50px;
+        }
+
+        .mi9 {
+
+            margin: 220px 61px 42px;
+            overflow: hidden;
+            height: 120px;
+            width: 1226px;
+        }
+
+        .body {
+            padding-top: 22px;
+            background: #f5f5f5;
+        }
+
+        .bodykj {
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .bodykj1 {
+            height: 786px;
+            margin-bottom: 8px;
+        }
+
+        .boxdh {
+            position: relative;
+            height: 58px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .boxtitle {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 58px;
+            color: #333;
+        }
+
+        .boxtitle1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .boxtitle1 a {
+            font-size: 16px;
+            line-height: 58px;
+            color: #424242;
+            transition: all .4s;
+            text-decoration: none;
+        }
+
+        .boxtitle1 i {
+
+            width: 12px;
+            height: 12px;
+            padding: 4px;
+            margin-left: 8px;
+            border-radius: 16px;
+            font-size: 12px;
+            line-height: 12px;
+            background: #b0b0b0;
+            color: white;
+            vertical-align: 1px;
+            transition: all .4s;
+            font-style: normal;
+        }
+
+        .box2 {
+            margin-left: -14px;
+        }
+
+        .heisha {
+            width: 234px;
+            float: left;
+            margin-left: 14px;
+            min-height: 1px;
+        }
+
+        .heisha ul {
+            margin: 0 0 -14px -14px;
+            height: 614px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .heisha li {
+            height: 614px;
+            position: relative;
+            z-index: 1;
+            float: left;
+            width: 234px;
+            margin-left: 14px;
+            margin-bottom: 14px;
+            background: #fff;
+            transition: all .2s linear;
+            list-style-type: none;
+        }
+
+        .heisha li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #757575;
+            text-decoration: none;
+        }
+
+        .contains {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 260px;
+        }
+
+        .new {
+            background-color: #83c44e;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 64px;
+            height: 20px;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+            margin: auto;
+        }
+
+        .new1 {
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 64px;
+            height: 20px;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+            margin: auto;
+        }
+
+        .sale {
+            text-decoration: line-through;
+            color: #b0b0b0;
+        }
+
+        .imgContains {
+            position: relative;
+            width: 234px;
+            height: 220px;
+        }
+
+        .itemImg {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .phoneName {
+            color: #333;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .peizhi {
+            width: 100%;
+            margin: 0 10px 10px;
+            height: 18px;
+            font-size: 12px;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #b0b0b0;
+        }
+
+        .price {
+            margin: 0 10px 14px;
+            text-align: center;
+            color: #ff6700;
+        }
+
+        .contains2 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 510px;
+            margin-top: -340px;
+        }
+
+        .contains3 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 760px;
+            margin-top: -340px;
+        }
+
+        .contains4 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 1010px;
+            margin-top: -340px;
+        }
+
+        .contains5 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 260px;
+            margin-top: 15px;
+        }
+
+        .contains6 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 510px;
+            margin-top: -340px;
+        }
+
+        .contains7 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 760px;
+            margin-top: -340px;
+        }
+
+        .contains8 {
+            height: 300px;
+            padding: 20px 0;
+            width: 234px;
+            position: relative;
+            background-color: white;
+            margin-left: 1010px;
+            margin-top: -340px;
+        }
+    </style>
+</head>
+<body>
+<div class="bar">
+    <div class="bar2">
+        <div class="bar3">
+            <a href="#">小米商城</a><span>|</span>
+            <a href="#">MIUI</a><span>|</span>
+            <a href="#">IoT</a><span>|</span>
+            <a href="#">云服务</a><span>|</span>
+            <a href="#">金融</a><span>|</span>
+            <a href="#">小爱开放平台</a><span>|</span>
+            <a href="#">政企服务</a><span>|</span>
+            <a href="#">资质证照</a><span>|</span>
+            <a href="#">协议规则</a><span>|</span>
+            <a href="#">下载app</a><span>|</span>
+            <a href="#">Select Region</a>
+        </div>
+        <div class="shoping">
+            <a href="#" class="shopingcard"><i class="fa fa-shopping-cart fa-lg " aria-hidden="true"></i><i
+                    class="shopingfont">购物车</i><span>(0)</span></a>
+        </div>
+    </div>
+    <div class="login">
+        <div class="logintxt">
+            <a href="#">登录</a><span>丨</span>
+            <a href="#">注册</a><span>丨</span>
+            <a href="#">消息通知</a>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="inner">
+        <div class="logo"><img src="img/milogo.png"></div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">小米手机</a></li>
+                <li><a href="#">红米</a></li>
+                <li><a href="#">电视</a></li>
+                <li><a href="#">笔记本</a></li>
+                <li><a href="#">家电</a></li>
+                <li><a href="#">新品</a></li>
+                <li><a href="#">路由器</a></li>
+                <li><a href="#">智能硬件</a></li>
+                <li><a href="#">服务</a></li>
+                <li><a href="#">社区</a></li>
+
+
+            </ul>
+        </div>
+        <div id="box">
+            <div class="headsearch">
+                <input type="text" name="search" placeholder="小米9 小米9se">
+                <div id="search"><i class="fa fa-search fa-2x" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <div class="menuselect">
+        <ul>
+            <li><a href="#">手机 电话卡 <i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">电视 盒子 <i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">笔记本 平板<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">家电 插线板<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">出行 穿戴<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">智能 路由器<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">电源 配件<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">健康 儿童<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">耳机 音箱<i class="fa fa-angle-right"></i></a></li>
+            <li><a href="#">生活 箱包<i class="fa fa-angle-right"></i></a></li>
+        </ul>
+    </div>
+    <div><a href="#"><img class="menuimg" src="https://i1.mifile.cn/a4/xmad_15548066591437_Stxlj.jpg" alt=""></a></div>
+</div>
+<div class="sub">
+    <div class="subcart">
+        <ul>
+            <li><a href="#"><i class="fa fa-mobile fa-3x" aria-hidden="true"></i>选购手机</a></li>
+            <li><a href="#"><i class="fa fa-gift fa-3x" aria-hidden="true"></i>企业团购</a></li>
+            <li><a href="#"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i>F码通道</a></li>
+            <li><a href="#"><i class="fa fa-file-text fa-3x" aria-hidden="true"></i>米粉卡</a></li>
+            <li><a href="#"><i class="fa fa-repeat fa-3x" aria-hidden="true"></i>以旧换新</a></li>
+            <li><a href="#"><i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>话费充值</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div class="span1">
+        <ul class="homep">
+            <li class="honep1"><a href="#"><img src="https://i1.mifile.cn/a4/xmad_15553262041939_kwhLA.jpg" alt=""
+                                                width="316px" height="170px"></a></li>
+            <li><a href="#"><img src="https://i1.mifile.cn/a4/xmad_15566163158698_gwoiA.jpg" alt="" width="316px"
+                                 height="170px"></a></li>
+            <li><a href="#"><img src="https://i1.mifile.cn/a4/xmad_15410599481599_tPFSB.jpg" alt="" width="316px"
+                                 height="170px"></a></li>
+        </ul>
+    </div>
+</div>
+<div class="mi9">
+    <div>
+        <a href="#"><img src="https://i1.mifile.cn/a4/xmad_15566150564326_nUZAQ.jpg" alt="" width="1226"
+                         height="120"></a>
+    </div>
+</div>
+<div class="body">
+    <div class="bodykj">
+        <div class="bodykj1">
+            <div class="boxdh">
+                <h2 class="boxtitle">手机</h2>
+                <div class="boxtitle1">
+                    <a href="#">查看全部</a><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div>
+                <div class="box2">
+                    <div class="heisha">
+                        <ul>
+                            <li><a href="#"><img src="http://i1.mifile.cn/a4/xmad_15572211624847_jSHgQ.jpg" alt=""
+                                                 width="234" height="694"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <div class="contains">
+                                    <div class="new">
+                                        新品
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="https://i1.mifile.cn/a1/pms_1550642182.7527088!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米9 6GB+128GB</div>
+                                    <div class="peizhi">骁龙855，索尼4800万超广角微距三摄</div>
+                                    <div class="price">
+                                        2999元
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains2">
+                                    <div class="new">
+                                        新品
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1550646283.24414368!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米9 SE 6GB+64GB</div>
+                                    <div class="peizhi">索尼4800万超广角三摄,骁龙712</div>
+                                    <div class="price">
+                                        1999元
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains3">
+                                    <div class="new">
+                                        新品
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1547020852.30751177!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">Redmi Note 7 3GB+32G</div>
+                                    <div class="peizhi">4800万拍照千元机，18个月超长质保</div>
+                                    <div class="price">
+                                        999元
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains4">
+                                    <div class="new">
+                                        新品
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1545457719.47232999!220x220.png"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米Play 4GB+64GB</div>
+                                    <div class="peizhi">5.84"小水滴全面屏,后置1200万 AI...</div>
+                                    <div class="price">
+                                        1099元
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains5">
+                                    <div class="new1">
+                                        减200元
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1537324004.08544830!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米8青春版6GB+64GB</div>
+                                    <div class="peizhi">潮流镜面渐变色，2400万自拍旗舰</div>
+                                    <div class="price">
+                                        1499元<span class="sale">1699元</span>
+                                    </div>
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains6">
+                                    <div class="new1">
+                                        享8折
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1527685277.65255600!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米8SE 6+64GB</div>
+                                    <div class="peizhi">三星AMOLED 全面屏 骁龙710</div>
+                                    <div class="price">
+                                        1599元<span class="sale">1999元</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains7">
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1524621350.77238418!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">小米6X 6GB+128GB</div>
+                                    <div class="peizhi">轻薄美观的拍照手机</div>
+                                    <div class="price">
+                                        1999元
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contains8">
+                                    <div class="new1">
+                                        减50元
+                                    </div>
+                                    <div class="imgContains">
+                                        <a href="#"><img class="itemImg"
+                                                         src="http://i1.mifile.cn/a1/pms_1528719461.20891365!220x220.jpg"
+                                                         alt=""></a>
+                                    </div>
+                                    <div class="phoneName">红米6A 2GB+16GB</div>
+                                    <div class="peizhi">12nm高性能处理器，1300万高清相机</div>
+                                    <div class="price">
+                                        549元<span class="sale">599元</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
