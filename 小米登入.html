@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style>
+
+        body {
+            font-size: 14px;
+            font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+        }
+
+        .logo {
+            width: 49px;
+            height: 48px;
+            margin: 0 auto;
+            display: block;
+            cursor: default;
+            background-image: url(https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png);
+        }
+
+        h4 {
+            margin-top: -10px;
+            margin-bottom: 15px;
+            margin-block-start: 1.33em;
+            margin-block-end: 1.33em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            text-align: center;
+        }
+
+        .zhuce {
+            font-size: 30px;
+            font-weight: normal;
+            color: #333;
+            line-height: 1.5;
+            display: block;
+        }
+
+        .countryed {
+            height: 25px;
+            padding-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+            font-weight: normal;
+            display: block;
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 515px;
+            margin-top: -25px;
+        }
+
+        .waring {
+            height: 25px;
+            padding-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+            font-weight: normal;
+            display: block;
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 515px;
+            margin-top: 45px;
+        }
+
+        .phone {
+            height: 25px;
+            padding-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+            font-weight: normal;
+            display: block;
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 515px;
+            margin-top: 80px;
+        }
+
+        .state-contain {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: fit-content;
+            height: 40px;
+            border: 1px solid #e8e8e8;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        .state {
+            color: #555;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            vertical-align: top;
+            width: 275px;
+            padding-left: 10px;
+            border-right: 1px solid #e8e8e8;
+            float: left;
+            margin: 0 auto;
+        }
+
+        .state-logo {
+            width: 16px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            margin: auto 12px;
+            margin-right: 14px;
+            background: url(https://account.xiaomi.com/static/res/0eeaaed/passport/oauth/images/icon_user.png) no-repeat left center;
+        }
+
+        .phone-contain {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: fit-content;
+            height: 40px;
+            border: 1px solid #e8e8e8;
+            display: inline-block;
+            margin: 110px auto;
+        }
+
+        .phone-dq {
+            width: 54px;
+            text-align: left;
+            padding: 0 9px;
+            height: 40px;
+            padding-left: 14px;
+            line-height: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #e8e8e8;
+            color: #555;
+            cursor: pointer;
+            float: left;
+        }
+
+        .sjx {
+            float: left;
+            margin: -20px -30px;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #9d9d9d transparent transparent transparent;
+        }
+
+        .phone-sr {
+            width: 236px;
+            height: 20px;
+            line-height: 20px;
+            padding: 10px;
+            display: inline-block;
+            color: #666;
+            margin: auto;
+        }
+
+        .intput {
+            background-color: #ff6700;
+            margin-top: 15px;
+            border: 1px solid rgba(186, 186, 186, 0.3);
+            color: #fff;
+            width: 330px;
+            height: 42px;
+            margin: 0 auto;
+            line-height: 42px;
+            text-align: center;
+            font-size: 14px;
+            display: block;
+            cursor: pointer;
+            overflow: hidden;
+            margin: 220px auto;
+        }
+
+        .p-box {
+            text-align: center;
+            padding-top: 40px;
+            margin: -200px auto;
+        }
+
+        .s-box {
+            padding: 10px 0;
+            cursor: pointer;
+            display: inline-block;
+            outline: 0 none;
+            text-align: center;
+            color: #9d9d9d;
+        }
+
+        .nike {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAk5JREFUOBGVlctrU1EQxn/3tqZVKxQRCirdWRRX4sKuK7j1GYoLN4JYULT6FwiuFSOiEf+A+iq6FwV3uhIXWqmugigVKT5iTUKa6zfn5CQ3MUnTgXPPa+Y7c+bMNzeihyRHGGWAcSJGnFpCkVUK0VN+dDOLOm0kx9lNhhmBTartFODWOuCyAD+rvaJCPprnQ7t9C2ACMdPMCuys2oRmCKxVpERNrcKi2l2Nb0WPNKpLQz3JCiLmHkOcYJhNQaFnX1YIysxzn9MCsmOcD94m5ryAjvUNZlZDim2GrLuVR/GAyVH2uGuawnrFbqMQubjL1qJkJ81occKN1/rEg5Bpi4jZ2iNKYpcagxxIXb475OgOuPIern6UpYCDmFvKCMOKXZ751Ajbvo8GWudbxuDyCxjbBd8+6QmqzX17WsNQzsbybHMjz4LK/izc/AVTF/zKyDaBPReYolJ4A7cPB81mb7kqAqT8bu6xIiJs2AjTOeWhPJ08Bdv3wpd3kDsEf7sSRf7V+EPCcgoOFp7B3Dm/lL0G4/tgaRGuH4Ti9xbVxsQwRM3YuOnoZAxIy8s78PCSVrTx86vApuD3UlqjOTZbT8mCY0pykhvKposK6v+SUWpWS62P0K61qoUVctEcsz4PS+KkcbOTVIq9wczG8zpvQwcYPWHBEb2kc9YrxmcViVB5vIcG8kDXLvNYTS71KeaAFQdVnGDRSBurFkmNM5R4K4X+y5ccCZXGQN2jBPTQu2IxLNBuBbbKa3mWd6EKRvW+I2DQafwCjE0mlrNr/AL+AbcOsj+c24+/AAAAAElFTkSuQmCC);
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            margin-top: -4px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .nike2{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAcxJREFUOBGdVb1qAkEQ9vYwiBcwXiyuiOGKEJLaIoHUh/U9RSxS5Ql8BIsUpsgLHAlCGhEby1xhnZ9CvBDQQs5IvEMQNPMdrviz/twt6O7OzPfN7O7MnBTbMiqVylEikThljB3CbDKZDEej0bdpmr+bYJJIUavVLjKZTCGZTF6nUqmTeDyuwm48HruDweDH9/23Xq9XzufzHyL8XFYsFplt2/etVuuTQFOKaLo6IIMONrC1LOtgTkALmW+gyOVyT5qm3em6rlFUMUlaPwBk0KXT6WNZlm/I4Vk2m31tNBpTzhXM8NbpdP5WI9q1b7fbHrBLZPV6/RJH2AXepAcW9w5Shj8Kv0BHPcc6ygAWjwgsQ2ooinJF6RGFK8AAi4wAF0OeITVED7CvB2DBEeQsgRSeZ/sSiOzAgQII7lBkEFUGQg8VEJWA48CB0mSoTZQTpQTXhZ6BBQe4AnCz2SyhnKIOYMEBsuAOXdd97Ha7X6FDmwGARbNYwqN8UEZho0S5Lpbe/JWr1WqJPD3Tb7jkacvGcRyfgnih+UFoho4Db2HaF1reItl6fyItmoWqqrebGqzneXa/3y8bhvG+SIa1kJAb8U8A7ZWZzNv1CfgHv1r3E9DWv4gAAAAASUVORK5CYII=);
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            margin-top: -4px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+
+        .yhxy {
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .yszc {
+            color: #333;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .yy {
+            text-align: center;
+            height: 80px;
+            margin: 250px;
+            display: block;
+            overflow: hidden;
+
+        }
+
+        ul {
+            list-style: none;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+            text-align: center;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #9d9d9d;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        .banquan {
+            padding: 10px;
+            display: block;
+            margin: -280px;
+            color: #9d9d9d;
+            text-align: center;
+
+        }
+        .country {
+            width: 330px;
+            height: 268px;
+            border: 1px solid #e8e8e8;
+            overflow: scroll;
+            position: absolute;
+            left: 0;
+            top: 97px;
+            background-color: #fff;
+            margin-left: 510px;
+            margin-top: 80px;
+        }
+
+        .header {
+            background: #fcdecc;
+            padding-left: 10px;
+            margin-bottom: 6px;
+            line-height: 30px;
+            color: #ef5b00 !important;
+            cursor: default;
+        }
+
+        .list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .record {
+            color: #000;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            padding: 0 10px;
+            line-height: 39px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+
+</div>
+<div>
+    <h4 class="zhuce">注册小米账号</h4>
+</div>
+<div>
+    <div><h4 class="countryed">国家/地区</h4></div>
+
+    <div class="state-contain">
+        <p class="state">中国</p>
+        <i class="state-logo"></i>
+    </div>
+    <!--国家地区选择列表-->
+    <div class="country" id="countryChoose" style="display: none;">
+        <div class="container countrycode-container-A">
+            <div class="header">A</div>
+            <ul class="list">
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AD">Andorra</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AF">Afghanistan</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AG">Antigua and Barbuda</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AI">Anguilla</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AL">Albania</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="AM">Armenia</span><span
+                        class="record-code"></span></li>
+            </ul>
+        </div>
+        <div class="container countrycode-container-B">
+            <div class="header">B</div>
+            <ul class="list">
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BA">Bosnia and Herzegovina</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BB">Barbados</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BD">Bangladesh</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BE">Belgium</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BF">Burkina Faso</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BG">Bulgaria</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BH">Bahrain</span><span
+                        class="record-code"></span></li>
+                <li class="record clearfix"><span class="record-country" data-code=""
+                                                  data-brief="BI">Burundi</span><span
+                        class="record-code"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div><h4 class="waring">成功注册帐号后，国家/地区将不能被修改</h4></div>
+    <div><h4 class="phone">手机号码</h4></div>
+</div>
+<div class="phone-contain">
+    <p class="phone-sr">请输入手机号码</p>
+    <i class="phone-dq">+86</i>
+    <span class="sjx"></span>
+</div>
+<div class="intput">
+    立即注册
+</div>
+<div class="p-box">
+
+    <label id="label" class="s-box">
+        <i class="nike" id="nike"></i>注册帐号即表示您同意并愿意遵守小米 <a href="#" class="yhxy">用户协议</a>和 <a href="#" class="yszc">隐私政策</a>
+    </label>
+
+</div>
+<div class="yy">
+    <ul>
+        <li><a href=""> 简体 </a> &nbsp;&nbsp;&nbsp;|</li>
+        <li><a href=""> 繁体 </a>&nbsp;&nbsp;&nbsp;|</li>
+        <li><a href=""> English </a>&nbsp;&nbsp;&nbsp;|</li>
+        <li><a href=""> 常见问题 </a>&nbsp;&nbsp;</li>
+    </ul>
+</div>
+<div>
+    <p class="banquan">
+        <span>
+            小米公司版权所有-京ICP备10046444- <a href="#"><img
+                src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></a> <a
+                href="#">京公网安备11010802020134号-京ICP证110507号</a>
+        </span>
+    </p>
+</div>
+<script>
+    var state = document.getElementsByClassName('state')[0];
+    state.addEventListener('click', function () {
+        var country = document.getElementById('countryChoose');
+        var a = country.style.display;
+        if (a == 'none') {
+            country.style.display = 'block';
+        }
+        if (a == 'block') {
+            country.style.display = 'none';
+        }
+    })
+</script>
+
+<script>
+    document.getElementById('label').addEventListener('click', function () {
+        var a = document.getElementById('nike').className;
+        if (a == 'nike') {
+            document.getElementById('nike').className = 'nike2';
+        }
+        if (a == 'nike2') {
+            document.getElementById('nike').className = 'nike';
+        }
+    })
+
+</script>
+</body>
+</html>

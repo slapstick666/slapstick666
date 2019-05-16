@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米注册</title>
+    <style>
+        .logo {
+            height: 98px;
+            margin: 0 auto;
+        }
+
+        .logoimg {
+            display: block;
+            height: 98px;
+            width: 1130px;
+            margin: 0 auto;
+        }
+
+        .bgc {
+            display: block;
+            height: 588px;
+            background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f838fdcd77715410b441f2f56d8f10cd.jpg);
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 98px;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+
+        .navtabs {
+            height: 510px;
+            width: 410px;
+            background-color: white;
+            padding: 27px 0 24px;
+            text-align: center;
+            font-size: 24px;
+            color: #666;
+            float: right;
+            margin-right: 80px;
+            margin-top: 30px;
+        }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            padding: 27px 0 24px;
+            font-size: 24px;
+            color: #666;
+        }
+
+        .line {
+            width: 1px;
+            height: 24px;
+            margin: 0 35px 0 42px;
+            color: gainsboro;
+        }
+
+        div a:hover {
+            color: #f56600;
+        }
+
+        .input {
+            width: 410px;
+            min-height: 257px;
+            margin-bottom: 0;
+            margin-right: -410px;
+            margin-top: 110px;
+            font-size: 14px;
+            z-index: 4;
+            background-color: white;
+            float: right;
+        }
+
+        input {
+            height: 22px;
+            width: 306px;
+            line-height: 22px;
+            padding: 13px 16px 13px 14px;
+            display: block;
+            margin-left: 35px;
+            color: #e2e2e2;
+        }
+
+        .botton {
+            background-color: #ff6700;
+            width: 340px;
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            margin-bottom: 14px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            float: right;
+            margin-right: -375px;
+            margin-top: 250px;
+        }
+
+        .text1 {
+            width: 116px;
+            height: 50px;
+            color: #ff6700;
+            border: 0 none;
+            line-height: normal;
+            margin: 0;
+            font-size: 13px;
+            float: right;
+            margin-right: -150px;
+            margin-top: 280px;
+
+        }
+
+        .text2 {
+            width: 150px;
+            height: 80px;
+            color: darkgray;
+            border: 0 none;
+            line-height: normal;
+            margin: 0;
+            font-size: 13px;
+            float: right;
+            margin-right: -380px;
+            margin-top: 280px;
+        }
+
+        .other {
+            width: 410px;
+            padding-top: 0;
+            position: absolute;
+            top: 350px;
+            margin: 150px 850px;
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 10px;
+        }
+
+        .othertext {
+            color: #bbb;
+            font-size: 14px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .third {
+            padding-top: 3px;
+            text-align: center;
+            vertical-align: middle;
+
+        }
+
+        .third div div {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+            text-indent: -99999px; /*首行缩进*/
+            border-radius: 50%;
+
+        }
+
+        .third div {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 50%;
+        }
+
+        .qq_contain {
+            display: inline-block;
+            background-color: #0288d1;
+            margin: 0 17px;
+
+        }
+
+        .qq {
+            background-position: -19px 0;
+            margin: 5px 5px;
+        }
+
+        .weibo-contain {
+            background-color: #d32f2f;
+            display: inline-block;
+            margin: 0 17px;
+        }
+
+        .weibo {
+            margin: 5px 5px;
+            background-position: -38px 0;
+        }
+
+        .zfb-contain {
+            background-color: #0ae;
+            display: inline-block;
+            margin: 0 17px;
+        }
+
+        .zfb {
+            margin: 5px 5px;
+            background-position: -57px 0;
+        }
+
+        .wx-contain {
+            background-color: #00d20d;
+            display: inline-block;
+            margin: 0 17px;
+        }
+
+        .wx {
+            margin: 5px 5px;
+            background-position: -85px 0;
+        }
+
+        .footer {
+            background: #fff;
+            padding-top: 100px;
+            position: relative;
+            z-index: 4;
+            height: 80px;
+            text-align: center;
+            margin-top: 500px;
+
+        }
+
+        ul {
+            list-style: none;
+            display: block;
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+            text-align: center;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+            color: #757575;
+        }
+
+        li a {
+            font-size: 14px;
+            color: #757575;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        li a:hover {
+            color: #333;
+        }
+
+        span a {
+            font-size: 14px;
+            color: #757575;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="logo">
+    <div class="logoimg">
+        <img src="https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png"
+             alt="">
+    </div>
+</div>
+<div class="bgc">
+    <div class="navtabs">
+        <a href="#">账号登录</a><span class="line">丨</span>
+        <a href="#">扫码登录</a>
+    </div>
+    <div class="input">
+        <input type="text" name="id" placeholder="邮箱/手机号码/小米ID"><br>
+        <input type="text" name="password" placeholder="密码">
+    </div>
+    <div class="botton">
+        登入
+    </div>
+    <div>
+        <a href="#" class="text1">手机短信登录/注册</a>
+    </div>
+    <div>
+        <a href="#" class="text2">立即注册丨忘记密码？</a>
+    </div>
+</div>
+<div class="other">
+    <fieldset>
+        <legend align="center" class="othertext">其他方式登录</legend>
+        <div>
+
+        </div>
+    </fieldset>
+    <div class="third">
+        <div class="qq_contain">
+            <div class="qq">QQ</div>
+        </div>
+        <div class="weibo-contain">
+            <div class="weibo">微博</div>
+        </div>
+        <div class="zfb-contain">
+            <div class="zfb">支付宝</div>
+        </div>
+        <div class="wx-contain">
+            <div class="wx">微信</div>
+        </div>
+    </div>
+</div>
+<div class="third">
+    <div class="qq_contain">
+        <div class="qq">QQ</div>
+    </div>
+    <div class="weibo-contain">
+        <div class="weibo">微博</div>
+    </div>
+    <div class="zfb-contain">
+        <div class="zfb">支付宝</div>
+    </div>
+    <div class="wx-contain">
+        <div class="wx">微信</div>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <ul>
+            <li><a href="#"> 简体 </a> &nbsp;&nbsp;&nbsp;|</li>
+            <li><a href="#"> 繁体 </a>&nbsp;&nbsp;&nbsp;|</li>
+            <li><a href="#"> English </a>&nbsp;&nbsp;&nbsp;|</li>
+            <li><a href="#"> 常见问题 </a> &nbsp;&nbsp;&nbsp;|</li>
+            <li><a href="#"> 隐私政策 </a></li>
+        </ul>
+    </div>
+    <p>
+          <span>
+            小米公司版权所有-京ICP备10046444- <a href="#"><img
+                  src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></a> <a
+                  href="#">京公网安备11010802020134号-京ICP证110507号</a>
+        </span>
+    </p>
+</div>
+</body>
+</html>
